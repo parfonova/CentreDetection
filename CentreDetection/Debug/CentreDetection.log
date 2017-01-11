@@ -1,0 +1,138 @@
+﻿Build started 11.01.2017 22:41:53.
+     1>Project "D:\Documents\Visual Studio 2012\Projects\CentreDetection\CentreDetection\CentreDetection.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\visualstudio\VC\bin\CL.exe /c /I"C:\Program Files\IDS\uEye\Develop\include" /ID:\opencv300\opencv\build\x86\vc11\..\..\include /ID:\opencv300\opencv\build\x86\vc11\..\..\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MAIN.cpp
+         MAIN.cpp
+     1>d:\documents\visual studio 2012\projects\centredetection\centredetection\main.cpp(72): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         D:\visualstudio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Visual Studio 2012\Projects\CentreDetection\Debug\CentreDetection.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\opencv300\opencv\build\x86\vc11\lib /LIBPATH:"C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib" /LIBPATH:"C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib" D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ts300.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ts300d.lib D:\opencv300\opencv\build\x86\vc11\lib\opencv_world300.lib D:\opencv300\opencv\build\x86\vc11\lib\opencv_world300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_calib3d300d.lib "C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib" "C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib" D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_core300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_features2d300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_flann300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_highgui300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_imgproc300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ml300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_objdetect300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_video300d.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Documents\Visual Studio 2012\Projects\CentreDetection\Debug\CentreDetection.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Visual Studio 2012\Projects\CentreDetection\Debug\CentreDetection.lib" /MACHINE:X86 Debug\MAIN.obj
+     1>opencv_ts300.lib(ts_perf.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>opencv_ts300.lib(ts_perf.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>opencv_ts300.lib(opencv_ts_pch.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>opencv_ts300.lib(opencv_ts_pch.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>opencv_ts300.lib(ts_gtest.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>opencv_ts300.lib(ts_gtest.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>opencv_ts300.lib(ts.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>opencv_ts300.lib(ts.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: __thiscall std::locale::id::id(unsigned int)" (??0id@locale@std@@QAE@I@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: __thiscall std::locale::id::operator unsigned int(void)" (??Bid@locale@std@@QAEIXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: bool __thiscall std::codecvt_base::always_noconv(void)const " (?always_noconv@codecvt_base@std@@QBE_NXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: int __thiscall std::codecvt<char,char,int>::in(int &,char const *,char const *,char const * &,char *,char *,char * &)const " (?in@?$codecvt@DDH@std@@QBEHAAHPBD1AAPBDPAD3AAPAD@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: int __thiscall std::codecvt<char,char,int>::out(int &,char const *,char const *,char const * &,char *,char *,char * &)const " (?out@?$codecvt@DDH@std@@QBEHAAHPBD1AAPBDPAD3AAPAD@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: int __thiscall std::codecvt<char,char,int>::unshift(int &,char *,char *,char * &)const " (?unshift@?$codecvt@DDH@std@@QBEHAAHPAD1AAPAD@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: static unsigned int __cdecl std::codecvt<char,char,int>::_Getcat(class std::locale::facet const * *,class std::locale const *)" (?_Getcat@?$codecvt@DDH@std@@SAIPAPBVfacet@locale@2@PBV42@@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: bool __thiscall std::ios_base::good(void)const " (?good@ios_base@std@@QBE_NXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: int __thiscall std::ios_base::flags(void)const " (?flags@ios_base@std@@QBEHXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: __int64 __thiscall std::ios_base::width(void)const " (?width@ios_base@std@@QBE_JXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: __int64 __thiscall std::ios_base::width(__int64)" (?width@ios_base@std@@QAE_J_J@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::basic_streambuf<char,struct std::char_traits<char> >(void)" (??0?$basic_streambuf@DU?$char_traits@D@std@@@std@@IAE@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: virtual __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::~basic_streambuf<char,struct std::char_traits<char> >(void)" (??1?$basic_streambuf@DU?$char_traits@D@std@@@std@@UAE@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: class std::locale __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::getloc(void)const " (?getloc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QBE?AVlocale@2@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: int __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::sputc(char)" (?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAEHD@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: __int64 __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::sputn(char const *,__int64)" (?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QAE_JPBD_J@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: char * __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::eback(void)const " (?eback@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBEPADXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: char * __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::gptr(void)const " (?gptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBEPADXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: char * __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::pptr(void)const " (?pptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBEPADXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: char * __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::egptr(void)const " (?egptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBEPADXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: void __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::setg(char *,char *,char *)" (?setg@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IAEXPAD00@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: char * __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::epptr(void)const " (?epptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IBEPADXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: char * __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::_Gndec(void)" (?_Gndec@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IAEPADXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: char * __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::_Gninc(void)" (?_Gninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IAEPADXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: char * __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::_Pninc(void)" (?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IAEPADXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: void __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::_Init(void)" (?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IAEXXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: void __thiscall std::basic_streambuf<char,struct std::char_traits<char> >::_Init(char * *,char * *,int *,char * *,char * *,int *)" (?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IAEXPAPAD0PAH001@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: virtual __thiscall std::basic_ios<char,struct std::char_traits<char> >::~basic_ios<char,struct std::char_traits<char> >(void)" (??1?$basic_ios@DU?$char_traits@D@std@@@std@@UAE@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: void __thiscall std::basic_ios<char,struct std::char_traits<char> >::clear(int,bool)" (?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: void __thiscall std::basic_ios<char,struct std::char_traits<char> >::setstate(int,bool)" (?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QAEXH_N@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: class std::basic_ostream<char,struct std::char_traits<char> > * __thiscall std::basic_ios<char,struct std::char_traits<char> >::tie(void)const " (?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: class std::basic_streambuf<char,struct std::char_traits<char> > * __thiscall std::basic_ios<char,struct std::char_traits<char> >::rdbuf(void)const " (?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEPAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: char __thiscall std::basic_ios<char,struct std::char_traits<char> >::fill(void)const " (?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "protected: __thiscall std::basic_ios<char,struct std::char_traits<char> >::basic_ios<char,struct std::char_traits<char> >(void)" (??0?$basic_ios@DU?$char_traits@D@std@@@std@@IAE@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: __thiscall std::basic_ostream<char,struct std::char_traits<char> >::basic_ostream<char,struct std::char_traits<char> >(class std::basic_streambuf<char,struct std::char_traits<char> > *,bool)" (??0?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@PAV?$basic_streambuf@DU?$char_traits@D@std@@@1@_N@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: virtual __thiscall std::basic_ostream<char,struct std::char_traits<char> >::~basic_ostream<char,struct std::char_traits<char> >(void)" (??1?$basic_ostream@DU?$char_traits@D@std@@@std@@UAE@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: virtual void __thiscall std::basic_ostream<char,struct std::char_traits<char> >::_Add_vtordisp2(void)" (?_Add_vtordisp2@?$basic_ostream@DU?$char_traits@D@std@@@std@@UAEXXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: void __thiscall std::basic_ostream<char,struct std::char_traits<char> >::_Osfx(void)" (?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: class std::basic_ostream<char,struct std::char_traits<char> > & __thiscall std::basic_ostream<char,struct std::char_traits<char> >::operator<<(class std::basic_ostream<char,struct std::char_traits<char> > & (__cdecl*)(class std::basic_ostream<char,struct std::char_traits<char> > &))" (??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "public: class std::basic_ostream<char,struct std::char_traits<char> > & __thiscall std::basic_ostream<char,struct std::char_traits<char> >::flush(void)" (?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>msvcprtd.lib(MSVCP110D.dll) : error LNK2005: "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::endl(class std::basic_ostream<char,struct std::char_traits<char> > &)" (?endl@std@@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@1@AAV21@@Z) already defined in opencv_ts300.lib(ts_perf.obj)
+     1>libcpmt.lib(ios.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(ios.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(ios.obj) : error LNK2005: "public: static void __cdecl std::ios_base::_Addstd(class std::ios_base *)" (?_Addstd@ios_base@std@@SAXPAV12@@Z) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(ios.obj) : error LNK2005: "private: static void __cdecl std::ios_base::_Ios_base_dtor(class std::ios_base *)" (?_Ios_base_dtor@ios_base@std@@CAXPAV12@@Z) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(locale0.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(locale0.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(locale0.obj) : error LNK2005: "void __cdecl std::_Facet_Register(class std::_Facet_base *)" (?_Facet_Register@std@@YAXPAV_Facet_base@1@@Z) already defined in msvcprtd.lib(locale0_implib.obj)
+     1>libcpmt.lib(locale0.obj) : error LNK2005: "private: static class std::locale::_Locimp * __cdecl std::locale::_Getgloballocale(void)" (?_Getgloballocale@locale@std@@CAPAV_Locimp@12@XZ) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(locale0.obj) : error LNK2005: "private: static class std::locale::_Locimp * __cdecl std::locale::_Init(bool)" (?_Init@locale@std@@CAPAV_Locimp@12@_N@Z) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_ctor(class std::_Locinfo *,char const *)" (?_Locinfo_ctor@_Locinfo@std@@SAXPAV12@PBD@Z) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(locale0.obj) : error LNK2005: "public: static void __cdecl std::_Locinfo::_Locinfo_dtor(class std::_Locinfo *)" (?_Locinfo_dtor@_Locinfo@std@@SAXPAV12@@Z) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(cout.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(cout.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(cerr.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(cerr.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(iosptrs.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(iosptrs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(locale.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(locale.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(xlock.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(xlock.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(xlock.obj) : error LNK2005: "public: __thiscall std::_Lockit::_Lockit(int)" (??0_Lockit@std@@QAE@H@Z) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(xlock.obj) : error LNK2005: "public: __thiscall std::_Lockit::~_Lockit(void)" (??1_Lockit@std@@QAE@XZ) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(xthrow.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(xthrow.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xbad_alloc(void)" (?_Xbad_alloc@std@@YAXXZ) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xlength_error(char const *)" (?_Xlength_error@std@@YAXPBD@Z) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(xthrow.obj) : error LNK2005: "void __cdecl std::_Xout_of_range(char const *)" (?_Xout_of_range@std@@YAXPBD@Z) already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>libcpmt.lib(wlocale.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(wlocale.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(xlocale.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(xlocale.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(xdateord.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in MAIN.obj
+     1>libcpmt.lib(xdateord.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MT_StaticRelease' doesn't match value 'MDd_DynamicDebug' in MAIN.obj
+     1>libcpmt.lib(xwctomb.obj) : error LNK2005: __Getcvt already defined in msvcprtd.lib(MSVCP110D.dll)
+     1>LIBCMT.lib(stdexcpt.obj) : error LNK2005: "public: __thiscall std::bad_cast::bad_cast(class std::bad_cast const &)" (??0bad_cast@std@@QAE@ABV01@@Z) already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(stdexcpt.obj) : error LNK2005: "public: __thiscall std::bad_cast::bad_cast(char const *)" (??0bad_cast@std@@QAE@PBD@Z) already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(stdexcpt.obj) : error LNK2005: "public: __thiscall std::exception::exception(char const * const &)" (??0exception@std@@QAE@ABQBD@Z) already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(stdexcpt.obj) : error LNK2005: "public: __thiscall std::exception::exception(class std::exception const &)" (??0exception@std@@QAE@ABV01@@Z) already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(stdexcpt.obj) : error LNK2005: "public: virtual __thiscall std::bad_cast::~bad_cast(void)" (??1bad_cast@std@@UAE@XZ) already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(stdexcpt.obj) : error LNK2005: "public: virtual __thiscall std::exception::~exception(void)" (??1exception@std@@UAE@XZ) already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(stdexcpt.obj) : error LNK2005: "public: virtual char const * __thiscall std::exception::what(void)const " (?what@exception@std@@UBEPBDXZ) already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(invarg.obj) : error LNK2005: __invalid_parameter already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(invarg.obj) : error LNK2005: __invoke_watson already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(_file.obj) : error LNK2005: ___iob_func already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(_file.obj) : error LNK2005: __lock_file already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(_file.obj) : error LNK2005: __unlock_file already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(osfinfo.obj) : error LNK2005: __open_osfhandle already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(dosmap.obj) : error LNK2005: __errno already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(wsetloca.obj) : error LNK2005: __configthreadlocale already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(mlock.obj) : error LNK2005: __lock already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(mlock.obj) : error LNK2005: __unlock already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(fflush.obj) : error LNK2005: _fflush already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(crt0dat.obj) : error LNK2005: __amsg_exit already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(crt0dat.obj) : error LNK2005: __cexit already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(crt0dat.obj) : error LNK2005: __exit already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(crt0dat.obj) : error LNK2005: __initterm_e already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(crt0dat.obj) : error LNK2005: _exit already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(winapisupp.obj) : error LNK2005: ___crtSetUnhandledExceptionFilter already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(winapisupp.obj) : error LNK2005: ___crtTerminateProcess already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(winapisupp.obj) : error LNK2005: ___crtUnhandledException already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(winxfltr.obj) : error LNK2005: __XcptFilter already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(lconv.obj) : error LNK2005: _localeconv already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(getenv.obj) : error LNK2005: _getenv already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(hooks.obj) : error LNK2005: "void __cdecl terminate(void)" (?terminate@@YAXXZ) already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(crt0init.obj) : error LNK2005: ___xi_a already defined in MSVCRTD.lib(cinitexe.obj)
+     1>LIBCMT.lib(crt0init.obj) : error LNK2005: ___xi_z already defined in MSVCRTD.lib(cinitexe.obj)
+     1>LIBCMT.lib(crt0init.obj) : error LNK2005: ___xc_a already defined in MSVCRTD.lib(cinitexe.obj)
+     1>LIBCMT.lib(crt0init.obj) : error LNK2005: ___xc_z already defined in MSVCRTD.lib(cinitexe.obj)
+     1>LIBCMT.lib(strtoq.obj) : error LNK2005: __strtoui64 already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(strtol.obj) : error LNK2005: _strtol already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LIBCMT.lib(tolower.obj) : error LNK2005: _tolower already defined in MSVCRTD.lib(MSVCR110D.dll)
+     1>LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>MAIN.obj : error LNK2019: unresolved external symbol __imp__GetAsyncKeyState@4 referenced in function _main
+     1>D:\Documents\Visual Studio 2012\Projects\CentreDetection\Debug\CentreDetection.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "D:\Documents\Visual Studio 2012\Projects\CentreDetection\CentreDetection\CentreDetection.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:06.01

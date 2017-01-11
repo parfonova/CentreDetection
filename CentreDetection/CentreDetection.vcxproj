@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1DC7C27F-576A-4B92-B7DD-8FDA119E35FE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CentreDetection</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\opencv300\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\opencv300\opencv\build\x86\vc11\bin;D:\opencv300\opencv\build\x86\vc11\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>D:\opencv300\opencv\sources\modules\calib3d\src;D:\opencv300\opencv\sources\modules\contrib\src;D:\opencv300\opencv\sources\modules\core\src;D:\opencv300\opencv\sources\modules\gpu\src;D:\opencv300\opencv\sources\modules\highgui\src;D:\opencv300\opencv\sources\modules\imgproc\src;D:\opencv300\opencv\sources\modules\legacy\src;D:\opencv300\opencv\sources\modules\ml\src;D:\opencv300\opencv\sources\modules\objdetect\src;D:\opencv300\opencv\sources\modules\video\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\IDS\uEye\Develop\include;$(OPENCV_DIR)\..\..\include;$(OPENCV_DIR)\..\..\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OPENCV_DIR)\lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ts300.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ts300d.lib;D:\opencv300\opencv\build\x86\vc11\lib\opencv_world300.lib;D:\opencv300\opencv\build\x86\vc11\lib\opencv_world300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_calib3d300d.lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_core300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_features2d300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_flann300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_highgui300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_imgproc300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ml300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_objdetect300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_video300d.lib;C:\Program Files\Windows Kits\8.0\Lib\win8\um\x86\User32.lib;</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\IDS\uEye\Develop\include;$(OPENCV_DIR)\..\..\include;C:\Program Files\IDS\uEye\Develop\include;$(OPENCV_DIR)\..\..\include</AdditionalIncludeDirectories>
+      <PreprocessToFile>false</PreprocessToFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(OPENCV_DIR)\lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib;$(OPENCV_DIR)\staticlib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ts300.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ts300d.lib;D:\opencv300\opencv\build\x86\vc11\lib\opencv_world300.lib;D:\opencv300\opencv\build\x86\vc11\lib\opencv_world300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_calib3d300d.lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib;C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_core300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_features2d300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_flann300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_highgui300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_imgproc300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ml300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_objdetect300d.lib;D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_video300d.lib;C:\Program Files\Windows Kits\8.0\Lib\win8\um\x86\User32.lib;C:\Program Files\Windows Kits\8.0\Lib\win8\um\x86\User32.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="MAIN.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="uEye.h" />
+    <ClInclude Include="uEyeCaptureInterface.h" />
+    <ClInclude Include="ueye_deprecated.h" />
+    <ClInclude Include="uEye_tools.h" />
+    <ClInclude Include="version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="uEye_tools.cs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
