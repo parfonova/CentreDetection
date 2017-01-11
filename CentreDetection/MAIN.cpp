@@ -26,7 +26,7 @@ using namespace cv;
 using namespace std;
 //using boost::tuple;
 char key;
-
+// Chotko
 /// Global variables für Canny
 int edgeThresh = 1;//ok
 int lowThreshold = 15 ;
@@ -66,7 +66,7 @@ void CannyThreshold(int, void*)
   Canny( detected_edges, detected_edges, lowThreshold, lowThreshold*ratio, kernel_size );
 /// Find contours
   findContours( detected_edges, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0) );
-  /// Using Canny's output as a mask, we display our result
+  /// Using Canny's output as a mask, we display our resultt
   dst = Scalar::all(0);
 
 Mat drawing = Mat::zeros( detected_edges.size(), CV_8UC3 );
