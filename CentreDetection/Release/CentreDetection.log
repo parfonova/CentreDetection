@@ -1,12 +1,24 @@
-﻿Build started 11.01.2017 23:11:28.
+﻿Build started 13.01.2017 00:33:04.
      1>Project "D:\Documents\Visual Studio 2012\Projects\CentreDetection\CentreDetection\CentreDetection.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         D:\visualstudio\VC\bin\CL.exe /c /I"C:\Program Files\IDS\uEye\Develop\include" /ID:\opencv300\opencv\build\x86\vc11\..\..\include /I"C:\Program Files\IDS\uEye\Develop\include" /ID:\opencv300\opencv\build\x86\vc11\..\..\include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MAIN.cpp
+         MAIN.cpp
+     1>MAIN.cpp(72): warning C4018: '<' : signed/unsigned mismatch
+     1>MAIN.cpp(74): warning C4018: '<' : signed/unsigned mismatch
+     1>MAIN.cpp(81): warning C4018: '<' : signed/unsigned mismatch
+     1>MAIN.cpp(243): warning C4018: '<' : signed/unsigned mismatch
+     1>MAIN.cpp(244): warning C4018: '<' : signed/unsigned mismatch
+       Link:
          D:\visualstudio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Visual Studio 2012\Projects\CentreDetection\Release\CentreDetection.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:D:\opencv300\opencv\build\x86\vc11\lib /LIBPATH:"C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib" /LIBPATH:"C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib" /LIBPATH:"C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib" /LIBPATH:"C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib" /LIBPATH:D:\opencv300\opencv\build\x86\vc11\staticlib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ts300.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ts300d.lib D:\opencv300\opencv\build\x86\vc11\lib\opencv_world300.lib D:\opencv300\opencv\build\x86\vc11\lib\opencv_world300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_calib3d300d.lib "C:\Program Files\IDS\uEye\Develop\Lib\uEye_api.lib" "C:\Program Files\IDS\uEye\Develop\Lib\uEye_tools.lib" D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_core300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_features2d300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_flann300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_highgui300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_imgproc300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_ml300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_objdetect300d.lib D:\opencv300\opencv\build\x86\vc11\staticlib\opencv_video300d.lib "C:\Program Files\Windows Kits\8.0\Lib\win8\um\x86\User32.lib" "C:\Program Files\Windows Kits\8.0\Lib\win8\um\x86\User32.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Documents\Visual Studio 2012\Projects\CentreDetection\Release\CentreDetection.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Visual Studio 2012\Projects\CentreDetection\Release\CentreDetection.lib" /MACHINE:X86 /SAFESEH Release\MAIN.obj
          Generating code
+     1>d:\documents\visual studio 2012\projects\centredetection\centredetection\main.cpp(248): warning C4700: uninitialized local variable 'minX' used
+     1>d:\documents\visual studio 2012\projects\centredetection\centredetection\main.cpp(251): warning C4700: uninitialized local variable 'maxX' used
+     1>d:\documents\visual studio 2012\projects\centredetection\centredetection\main.cpp(254): warning C4700: uninitialized local variable 'minY' used
+     1>d:\documents\visual studio 2012\projects\centredetection\centredetection\main.cpp(257): warning C4700: uninitialized local variable 'maxY' used
          Finished generating code
          CentreDetection.vcxproj -> D:\Documents\Visual Studio 2012\Projects\CentreDetection\Release\CentreDetection.exe
      1>Done Building Project "D:\Documents\Visual Studio 2012\Projects\CentreDetection\CentreDetection\CentreDetection.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.55
+Time Elapsed 00:00:02.45

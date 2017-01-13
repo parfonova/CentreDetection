@@ -1,8 +1,10 @@
 ﻿#include <iostream>
+#include <fstream>
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <math.h>
 #include <tuple>
 #include <vector>
 #include <fstream>
@@ -21,12 +23,9 @@
 #include <windows.h>
 
 
-
 using namespace cv;  
 using namespace std;
-//using boost::tuple;
 char key;
-// Chotko
 /// Global variables für Canny
 int edgeThresh = 1;//ok
 int lowThreshold = 15 ;
@@ -35,101 +34,62 @@ int ratio = 2;//war 3 ist ok oder vllt 2
 int kernel_size = 3;//gut so
 char* window_name_rgb = "Laser Beam in RGB";
 char* window_name_bw = "Laser Beam in BW";
+char* window_name_contour = "Laser Beam: Contours";
+char* window_name_dst = "rausfinden dst";
+char* window_name_bw_inv = "Invert BW";
 
 
-typedef vector <tuple<int,int>> coordinates;
- 
-/*//extreme Coordinates
-extLeft = tuple(c[c[:, :, 0].argmin()][0]);
-extRight = tuple(c[c[:, :, 0].argmax()][0]);
-extTop = tuple(c[c[:, :, 1].argmin()][0]);
-extBot = tuple(c[c[:, :, 1].argmax()][0]);
-*/
+	//Image Variables
+string im_name="Bild4";
+string im_extension = ".jpg";
+string bw = "_bw";
+Mat im_rgb  = imread (im_name + im_extension);
+Mat im_gray;
+Mat im_bw;
+Mat im_contour; // hier wird image mit countouren geladen
+Mat dst;
+Mat im_bw_inv;
 
-	string im_name="Bild3";
-	string im_extension = ".jpg";
-	string bw = "_bw";
-	Mat im_rgb  = imread (im_name + im_extension);
-	Mat im_gray;
-	Mat dst, detected_edges;
-	Mat im_gray1;
-	
-	vector<vector<Point> > contours;
-	vector<Vec4i> hierarchy;
-	RNG rng(12345);
+vector<vector<Point> > contours;
+vector<Vec4i> hierarchy;
+RNG rng(12345);
 
-	
+
+
 void CannyThreshold(int, void*)
 {
-  /// Reduce noise with a kernel 3x3
-  blur( im_gray, detected_edges, Size(3,3) );
-  Canny( detected_edges, detected_edges, lowThreshold, lowThreshold*ratio, kernel_size );
-/// Find contours
-  findContours( detected_edges, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0) );
+  // Reduce noise with a kernel 3x3
+ // blur( im_gray, im_contour, Size(3,3) ); //берет  изображение im_gray и записывает его в Mat im_contour
+ 
+	Canny( im_bw, im_contour, lowThreshold, lowThreshold*ratio, kernel_size );
+ 
+  // Find contours
+  //findContours( im_contour, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0) );
+  findContours( im_bw, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0) );
   /// Using Canny's output as a mask, we display our resultt
   dst = Scalar::all(0);
 
-Mat drawing = Mat::zeros( detected_edges.size(), CV_8UC3 );
-  for( int i = 0; i < contours.size(); i++ )
+  for(int i= 0; i < contours.size(); i++)
+{
+    for(int j= 0; j < contours[i].size();j++) // run until j < contours[i].size();
+    {
+  cout << contours[i][j] << " Contours" << endl;
+ 	}
+	  }
+
+Mat drawing = Mat::zeros( im_contour.size(), CV_8UC3 ); //Matrix mit Contouren
+ for( int i = 0; i < contours.size(); i++ )
      {
        Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
-       drawContours( drawing, contours, i, color, 2, 8, hierarchy, 0, Point(5,5) );
-     }
+       drawContours( drawing, contours, i, color, 2, 8, hierarchy, 0, Point() ); //war Point(5,5)
+   }
   
-  im_gray.copyTo( dst, detected_edges);
-  imshow( window_name_bw, dst ); 
-  imshow( "Contours", drawing );
+  imshow( window_name_contour, drawing );
+
+  cout << contours.size()<< " Contours SIZE" << endl;
  }
 
-
-/*void Readyforextremepoints(int, void*)
-{
-	thresh = threshold(im_gray, 45, 255, cv2.THRESH_BINARY)
-	thresh = erode(im_gray, None, iterations=2)
-	thresh = dilate(im_gray, None, iterations=2)
-}*/
-
-
-
-//TRESHOLD
-int threshold_value = 0;
-int threshold_type = 3;;
-int const max_value = 255;
-int const max_type = 4;
-int const max_BINARY_value = 255;
-
-char* window_name_tresholddemo = "Threshold Demo";
-char* trackbar_type = "Type: \n 0: Binary \n 1: Binary Inverted \n 2: Truncate \n 3: To Zero \n 4: To Zero Inverted";
-char* trackbar_value = "Value";
-
-
-void Threshold_Demo( int, void* )
-{
-  /* 0: Binary
-     1: Binary Inverted
-     2: Threshold Truncated
-     3: Threshold to Zero
-     4: Threshold to Zero Inverted
-   */
-  threshold( im_gray, dst, threshold_value, max_BINARY_value,threshold_type );
-  imshow( window_name_tresholddemo, dst );
-}
-
-
-
-/*int[] extreme_Points(int ax, int ay, int bx, int by)
-{
-int erg[] = new int[2];
-erg[0] = ax + bx;
-erg[1] = ay + by;
- 
-return erg;
-}*/
-
-
-
-
-
+/*
 //Milenas Prog
 int main(int argc, char *argv[])
 {
@@ -264,7 +224,7 @@ int main(int argc, char *argv[])
 
 			cvNamedWindow( "A", 1 );
 			cvShowImage("A",img_resized);
-			cv::waitKey(1);*/
+			cv::waitKey(1);
 		}
 	stop = GetAsyncKeyState(VK_LSHIFT); 
 	}
@@ -274,94 +234,101 @@ int main(int argc, char *argv[])
 }
 
 
+*/
+
+Point findCenterPoint()
+{  
+	int minX, minY, maxX, maxY;
+
+	for(int i = 0; i < contours.size(); i++) {
+		for(int j = 0; j < contours[i].size(); j++) {
+			int x = contours[i][j].x;
+			int y = contours[i][j].y;
+
+			if(minX == NULL || x < minX) {
+				minX = x;
+			}
+			if(maxX == NULL || x > maxX) {
+				maxX = x;
+			}
+			if(minY == NULL || y < minY) {
+				minY = y;
+			}
+			if(maxY == NULL || y > maxY) {
+				maxY = y;
+			}
+		}
+	}
+	int centerX = (maxX + minX) / 2;
+	int centerY = (maxY + minY) / 2;
+	cout << centerX << "krkr" << centerY << endl;
+	return Point(centerX, centerY);
+}
+//point centerleft(0,0), centerright(0,0); 
+//
+//
+//
+//cout << extleft.x << ","<< extleft.y << "left extrem point" << endl;
+//cout << extright.x << "," << extright.y << "right extrem point" << endl;
+//cout << exttop.x << "," << exttop.y << "top extrem point" << endl;
+//cout << extbot.x << "," << extbot.y << "bott extrem point" << endl;
+//
+//point centervertical = (extbot + exttop) / 2;
+//point centerhorizontal= (extright + extleft)/2;
+//point centre = (centervertical + centerhorizontal) / 2;
+//cout << centerleft << "," << centerright << " center" << endl;
+// }
 
 
 
 
-
-
-
-
-
-
-
-/*
 int main()
 {
-	 /*better version to explain
-   if( argc != 2)
-    {
-     cout << " Usage: display_image ImageToLoadAndDisplay" << endl;
-     return -1;
-    }
 	
 	namedWindow( window_name_rgb, CV_WINDOW_AUTOSIZE );
     imshow( window_name_rgb, im_rgb );
-	cvtColor(im_rgb,im_gray,CV_RGB2GRAY); //RGB to grayscale
-	Mat im_bw = im_gray > 128; //convert to binary
-	imwrite((im_name+bw+im_extension), im_bw); //save to disk
-	//namedWindow( window_name_bw, CV_WINDOW_AUTOSIZE );
-   // imshow( window_name_bw, im_bw );
-	/// Create a matrix of the same type and size as im_gray (for dst)
-	dst.create( im_gray.size(), im_gray.type() );
+	
+	cvtColor(im_rgb,im_gray,CV_RGB2GRAY,0); //RGB to grayscale
 
+	im_bw = im_gray > 128; //convert to binary
+	imwrite((im_name+bw+im_extension), im_bw); //save to disk
+	
+	namedWindow( window_name_bw, CV_WINDOW_AUTOSIZE );
+	imshow( window_name_bw, im_bw );
+	
+	double threshold_value = 1;
+	double max_BINARY_value = 255;
+
+	threshold( im_bw, im_bw_inv, threshold_value, max_BINARY_value,THRESH_BINARY_INV);// ein SWsBild, wo  Laserstrahl schwarz ist
+	namedWindow( window_name_bw, CV_WINDOW_AUTOSIZE );
+	imshow( window_name_bw_inv, im_bw_inv );
+
+	
+	/// Create a matrix of the same type and size as im_gray (for dst)
+	//dst.create( im_gray.size(), im_gray.type() );
+	//short stop = 0; //for closing	MAIN
 int rows = im_gray.rows;
 int cols = im_gray.cols;
-cv::Size s = im_gray.size();
+Size s = im_gray.size();
 rows = s.height;
 cols = s.width;
-cout << s << "groesse im gray" <<endl;
-
-   	
-	//blur( im_gray, im_gray, Size(3,3) ); //blur it
-	     
-		
-  /// Create a Trackbar for user to enter threshold
-							//createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold );
-createTrackbar( trackbar_type,
-                  window_name_tresholddemo, &threshold_type,
-                  max_type, Threshold_Demo );
-
-createTrackbar( trackbar_value,
-                  window_name_tresholddemo, &threshold_value,
-                  max_value, Threshold_Demo );
+cout << s << "Size of Image" << endl;
+cout << rows << " Rows" << endl;
+cout << cols << " Cols" << endl;
 
 CannyThreshold(0, 0);
+findCenterPoint();
+
+//////////BEISPIEL
+cout << contours[2][3] << " ja Contours" << endl;
+cout << contours[2][3].x << " ja Contours" << endl;
+cout << contours[2][3].y << " ja Contours" << endl;
 
 
-//cout << contours<<std::vector<<cv:: << endl;
-	for (int i = 0; i < 5thcontour.size(); i++) 
-		{
-    Point coordinate_i_ofcontour = 5thcontour.size();
-    cout << endl << "contour with coordinates: x = " << coordinate_i_ofcontour.x << " y = " << coordinate_i_ofcontour.y;
-}
-*/
-  
-  /*	GaussianBlur( im_gray, im_gray, Size(10,10), 0, 0, BORDER_DEFAULT );
-	
-	convertScaleAbs( im_gray1, im_gray1);
-	
-	vector<Vec3f> circles;
-    HoughCircles(im_gray1, circles, CV_HOUGH_GRADIENT,1, im_gray.rows/2, 100, 20, 0,im_gray.cols/2 );	
-	
-	 for( size_t i = 0; i < circles.size(); i++ )
-    {
-         Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-         int radius = cvRound(circles[i][2]);
-         // draw the circle center
-         circle( im_rgb, center, 3, Scalar(0,255,0), -1, 8, 0 );
-         // draw the circle outline
-         circle( im_rgb, center, radius, Scalar(0,0,255), 3, 8, 0 );
-    }
-    namedWindow( "circles", 1 );
-    imshow( "circles", im_rgb );
-	imshow( "circles2", im_gray );
-	cout << circles.size() << " Groesse der Kreise" <<endl;
-  		// Show our image inside it.
-		
-
-    waitKey(0);			// Wait for a keystroke in the window
+   waitKey(0);	
+	cvDestroyAllWindows();
+     // Wait for a keystroke in the window
+	//stop = GetAsyncKeyState(VK_LSHIFT); 
     return 0;
 }
-*/
 
